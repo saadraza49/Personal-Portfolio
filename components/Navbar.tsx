@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
+  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Achievements", href: "#achievements" },
   { label: "Process", href: "#process" },
   { label: "Contact", href: "#contact" }
 ];
@@ -27,6 +27,20 @@ export function Navbar() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+
+    if (href === "#home" || href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const target = document.querySelector(href);
+    if (target) {
+      (target as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}>
       <div className="container-custom">
@@ -38,8 +52,8 @@ export function Navbar() {
             className="text-xl font-bold tracking-tighter text-foreground flex items-center gap-2 group shrink-0"
           >
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground transform group-hover:rotate-12 transition-transform">S</div>
-            <span className="hidden sm:inline">Muhammad Saad <span className="text-primary">Raza.</span></span>
-            <span className="sm:hidden text-primary">Saad.</span>
+            <span className="hidden sm:inline">Muhammad <span className="text-primary">Saad Raza.</span></span>
+            <span className="sm:hidden text-primary">Saad Raza.</span>
           </a>
 
           {/* Desktop Nav - Right */}
@@ -48,6 +62,7 @@ export function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors"
               >
                 {item.label}
@@ -88,7 +103,10 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   className="text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    handleNavClick(e, item.href);
+                    setIsOpen(false);
+                  }}
                 >
                   {item.label}
                 </a>

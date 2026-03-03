@@ -16,7 +16,7 @@ const techStack = [
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-background pt-32 pb-12">
+    <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-background pt-32 pb-12">
       <div className="container-custom relative z-10">
         <div className="flex flex-col items-center text-center space-y-12">
 

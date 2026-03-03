@@ -20,74 +20,11 @@ const services = [
     price: "$XXX+"
   },
   {
-    title: "Next.js & React",
-    description: "Modern, responsive frontends built with Next.js and React for fast, smooth user experiences.",
-    icon: <LayoutTemplate className="h-6 w-6" />,
-    features: ["SSR & SSG", "Design Systems", "Performance Optimization"],
-    price: "$XXX"
-  },
-  {
-    title: "Python & FastAPI",
-    description: "High-performance backend APIs and services using Python and FastAPI.",
-    icon: <Cpu className="h-6 w-6" />,
-    features: ["API Design", "Async Services", "Data Processing"],
-    price: "$XXX"
-  },
-  {
-    title: "AI Integration",
-    description: "Embed AI capabilities directly into your existing products and workflows.",
-    icon: <Sparkles className="h-6 w-6" />,
-    features: ["Model Selection", "Feature Engineering", "Monitoring"],
-    price: "$XXX+"
-  },
-  {
-    title: "LLM Integration",
-    description: "Connect powerful language models (ChatGPT, Claude, etc.) into your apps safely and reliably.",
-    icon: <Sparkles className="h-6 w-6" />,
-    features: ["Prompt Design", "Guardrails", "Tooling & Orchestration"],
-    price: "$XXX+"
-  },
-  {
-    title: "Workflow Automation",
-    description: "Automate repetitive tasks and connect tools to save time and reduce human error.",
-    icon: <Workflow className="h-6 w-6" />,
-    features: ["Zapier/Make", "Internal Tools", "Custom Automations"],
-    price: "$XXX"
-  },
-  {
-    title: "Data Pipelines",
-    description: "Design and implement robust data pipelines to move, clean, and prepare your data.",
-    icon: <Cpu className="h-6 w-6" />,
-    features: ["ETL/ELT", "Batch & Streaming", "Data Quality"],
-    price: "$XXX+"
-  },
-  {
     title: "Technical Consulting",
     description: "Validate ideas quickly with solid technical foundations and clear execution plans.",
     icon: <Workflow className="h-6 w-6" />,
     features: ["Architecture Design", "Prototyping", "UX Reviews"],
     price: "$XXX+"
-  },
-  {
-    title: "Architecture Design",
-    description: "Plan scalable, maintainable system architectures that support your product roadmap.",
-    icon: <Workflow className="h-6 w-6" />,
-    features: ["System Diagrams", "Scalability", "Security Considerations"],
-    price: "$XXX"
-  },
-  {
-    title: "Prototyping",
-    description: "Quickly turn ideas into interactive prototypes to test with real users and stakeholders.",
-    icon: <Sparkles className="h-6 w-6" />,
-    features: ["MVP Scoping", "Clickable Demos", "Technical Feasibility"],
-    price: "$XXX"
-  },
-  {
-    title: "UX Reviews",
-    description: "Identify UX friction points and opportunities to improve your product’s usability.",
-    icon: <Sparkles className="h-6 w-6" />,
-    features: ["Heuristic Review", "UX Recommendations", "Prioritized Fixes"],
-    price: "$XXX"
   }
 ];
 

@@ -16,8 +16,9 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 text-[11px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-6 text-[11px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
             <button
+              type="button"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
@@ -38,7 +39,7 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-6">
             <a
               href="mailto:msaadraza49@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors"

@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const aboutStats = [
-  { label: "LeetCode Solved", value: "17+", color: "green" },
+  { label: "LeetCode Solved", value: "10+", color: "green" },
   { label: "Experience", value: "3+ Years", color: "blue" },
   { label: "Projects Done", value: "4+", color: "purple" },
-  { label: "SE Student", value: "GCUF", color: "emerald" }
+  { label: "Certifications", value: "3+", color: "emerald" }
 ];
 
 export function AboutSection() {

@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -58,7 +57,6 @@ export function Navbar() {
 
           {/* Actions & Mobile Toggle */}
           <div className="flex items-center gap-4">
-            <ThemeToggle />
             <button
               className="md:hidden p-2 text-muted-foreground hover:text-primary"
               onClick={() => setIsOpen(!isOpen)}

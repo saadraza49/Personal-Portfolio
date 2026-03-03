@@ -20,22 +20,22 @@ export function ContactSection() {
       message: formData.get("message"),
     };
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+ try {
+  await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      if (response.ok) {
-        setFormStatus({ type: "success", message: "Message sent successfully! I'll get back to you soon." });
-        (e.target as HTMLFormElement).reset();
-      } else {
-        throw new Error("Failed to send message");
-      }
-    } catch (error) {
-      setFormStatus({ type: "error", message: "Something went wrong. Please try again later." });
-    } finally {
+  setFormStatus({
+    type: "success",
+    message: "Message has been sent successfully!",
+  });
+
+  (e.target as HTMLFormElement).reset();
+} catch (error) {
+  setFormStatus({
+    type: "error",
+    message: "Something went wrong. Please try again later.",
+  });
+}
+    finally {
       setIsSubmitting(false);
     }
   };

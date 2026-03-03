@@ -66,13 +66,12 @@ export function ContactSection() {
                   <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                     <Mail size={18} />
                   </div>
-                  <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">msaadraza49@gmail.com</span>
-                </div>
-                <div className="flex items-center gap-4 group">
-                  <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Linkedin size={18} />
-                  </div>
-                  <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">linkedin.com/in/m-saadraza</span>
+                  <a
+                    href="mailto:msaadraza49@gmail.com"
+                    className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors"
+                  >
+                    msaadraza49@gmail.com
+                  </a>
                 </div>
                 <div className="flex items-center gap-4 group">
                   <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -102,7 +101,7 @@ export function ContactSection() {
                     <input
                       name="name"
                       required
-                      placeholder="John Doe"
+                      placeholder="Your Name"
                       className="w-full h-14 px-6 rounded-2xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none text-foreground placeholder:text-muted-foreground/30"
                     />
                   </div>
@@ -112,7 +111,7 @@ export function ContactSection() {
                       name="email"
                       type="email"
                       required
-                      placeholder="john@example.com"
+                      placeholder="Your Email"
                       className="w-full h-14 px-6 rounded-2xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none text-foreground placeholder:text-muted-foreground/30"
                     />
                   </div>

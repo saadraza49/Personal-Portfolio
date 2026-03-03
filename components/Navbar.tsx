@@ -1,0 +1,111 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
+
+const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Achievements", href: "#achievements" },
+  { label: "Process", href: "#process" },
+  { label: "Contact", href: "#contact" }
+];
+
+export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToHero = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}>
+      <div className="container-custom">
+        <div className="glass px-6 py-3 rounded-full flex items-center justify-between border-white/10 shadow-2xl">
+          {/* Logo - Left */}
+          <a
+            href="#"
+            onClick={scrollToHero}
+            className="text-xl font-bold tracking-tighter text-foreground flex items-center gap-2 group shrink-0"
+          >
+            <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground transform group-hover:rotate-12 transition-transform">S</div>
+            <span className="hidden sm:inline">Muhammad Saad <span className="text-primary">Raza.</span></span>
+            <span className="sm:hidden text-primary">Saad.</span>
+          </a>
+
+          {/* Desktop Nav - Right */}
+          <div className="hidden md:flex items-center gap-8 px-4">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Actions & Mobile Toggle */}
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            <button
+              className="md:hidden p-2 text-muted-foreground hover:text-primary"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+            <a
+              href="#contact"
+              className="hidden md:inline-flex px-6 py-2 rounded-full bg-primary text-primary-foreground text-xs font-bold hover:brightness-110 transition-all active:scale-95"
+            >
+              Let's Talk
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 w-full px-6 py-4 md:hidden"
+          >
+            <div className="glass rounded-3xl p-6 flex flex-col gap-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                className="w-full py-4 rounded-2xl bg-primary text-primary-foreground text-center font-bold"
+                onClick={() => setIsOpen(false)}
+              >
+                Let's Talk
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
+}

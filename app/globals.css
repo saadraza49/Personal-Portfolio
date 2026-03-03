@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215.4 25% 65%;
+    /* Increased contrast from 56.9% */
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-style: normal !important;
+    /* Force no italics globally */
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply w-full max-w-[1200px] mx-auto px-6;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .glass {
+    @apply border border-white/10 bg-white/5 backdrop-blur-md;
+  }
+
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent font-bold;
+  }
+
+  .section-heading {
+    @apply text-4xl md:text-5xl font-black tracking-tight text-foreground;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-muted-foreground max-w-2xl;
+  }
+
+  /* Infinite Marquee Animation - Seamless Duplicate Row Technique */
+  .marquee-container {
+    @apply flex overflow-hidden select-none w-full;
+  }
+
+  .marquee-content {
+    @apply flex shrink-0 justify-around gap-16 min-w-full animate-marquee;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  .tech-icon {
+    @apply h-10 w-auto grayscale opacity-40 transition-all duration-500 hover:grayscale-0 hover:opacity-100 hover:scale-110 cursor-default;
+  }
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.35);
+  color: #ffffff;
+}

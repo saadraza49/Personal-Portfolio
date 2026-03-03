@@ -9,22 +9,22 @@ const services = [
     description: "Integrate AI into your current systems to automate workflows and unlock new capabilities.",
     icon: <Cpu className="h-6 w-6" />,
     features: ["LLM Integration", "Workflow Automation", "Data Pipelines"],
-    price: "$XXX+",
+    price: "Starting at $2,500",
     mostPopular: true
   },
   {
     title: "Full-Stack AI Development",
     description: "Build modern, production-ready web apps that feel fast, polished, and intelligent.",
     icon: <LayoutTemplate className="h-6 w-6" />,
-    features: ["Next.js & React", "Python & FastAPI", "AI Integration"],
-    price: "$XXX+"
+    features: ["Next.js & React Frontend", "Python Backend", "AI Integration"],
+    price: "Starting at $1,800"
   },
   {
     title: "Technical Consulting",
     description: "Validate ideas quickly with solid technical foundations and clear execution plans.",
     icon: <Workflow className="h-6 w-6" />,
     features: ["Architecture Design", "Prototyping", "UX Reviews"],
-    price: "$XXX+"
+    price: "Starting at $80/hour"
   }
 ];
 

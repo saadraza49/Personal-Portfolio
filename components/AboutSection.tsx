@@ -31,7 +31,7 @@ export function AboutSection() {
             </div>
 
             <p className="text-xl text-muted-foreground leading-relaxed font-bold">
-              I&apos;m <span className="text-foreground font-black">Muhammad Saad Raza</span>, a Software Engineering student at GCUF Faisalabad.
+              I&apos;m <span className="text-foreground font-black">Muhammad Saad Raza</span>, a Software Engineering student at GCU Faisalabad.
               Currently, I am <span className="text-primary font-black">Learning AI & Machine Learning from SMIT (Saylani Mass IT Training)</span> to further deepen my expertise.
               I specialize in merging advanced AI capabilities with modern web architectures to build scalable, intelligent software systems.
             </p>

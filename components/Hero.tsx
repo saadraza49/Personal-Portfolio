@@ -40,7 +40,7 @@ export function Hero() {
               className="text-5xl md:text-8xl font-black tracking-tighter text-foreground leading-[0.9] uppercase"
             >
               AI DRIVEN <br />
-              <span className="text-gradient-blue">SOFTWARE ENGINEER</span>
+              <span className="text-gradient-animate">SOFTWARE ENGINEER</span>
             </motion.h1>
 
             <motion.p

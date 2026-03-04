@@ -54,7 +54,66 @@
     @apply text-lg text-muted-foreground max-w-2xl;
   }
 
-  /* Infinite Marquee Animation - Seamless Duplicate Row Technique */
+  /* ── Animated Hero Gradient + 3D Text ─────────────────────── */
+  .text-gradient-animate {
+    background: linear-gradient(100deg,
+        #60a5fa 0%,
+        #818cf8 30%,
+        #a78bfa 55%,
+        #60a5fa 80%,
+        #818cf8 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 6s ease infinite;
+    text-shadow: none;
+    /* 3-D depth via drop-shadow filter so it works on transparent text */
+    filter:
+      drop-shadow(0 2px 4px rgba(96, 165, 250, 0.35)) drop-shadow(0 4px 12px rgba(129, 140, 248, 0.2));
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% center;
+    }
+
+    50% {
+      background-position: 100% center;
+    }
+
+    100% {
+      background-position: 0% center;
+    }
+  }
+
+  /* ── Nav Link Animated Underline ───────────────────────────── */
+  .nav-link {
+    position: relative;
+    @apply text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 1.5px;
+    background: linear-gradient(90deg, #60a5fa, #818cf8);
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover {
+    @apply text-primary;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* ── Infinite Marquee Animation ────────────────────────────── */
   .marquee-container {
     @apply flex overflow-hidden select-none w-full;
   }
@@ -75,6 +134,10 @@
 
   .animate-marquee {
     animation: marquee 40s linear infinite;
+  }
+
+  .marquee-container:hover .marquee-content {
+    animation-play-state: paused;
   }
 
   .tech-icon {

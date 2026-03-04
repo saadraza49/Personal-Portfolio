@@ -17,13 +17,13 @@ export default function HomePage() {
       <Navbar />
       <Hero />
       <AboutSection />
+      <SkillsSection />
+      <VerifyMyWork />
       <ServicesSection />
       <WhyChooseMe />
-      <SkillsSection />
       <ProjectsSection />
       <AchievementsSection />
       <ProcessSection />
-      <VerifyMyWork />
       <ContactSection />
       <Footer />
     </main>

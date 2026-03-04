@@ -1,79 +1,128 @@
- "use client";
+"use client";
 
 import { motion } from "framer-motion";
-import { Cpu, LayoutTemplate, Sparkles, Workflow } from "lucide-react";
+import { Brain, Globe, Zap, ArrowRight } from "lucide-react";
 
 const services = [
   {
-    title: "AI & Automation",
-    description: "Integrate AI into your current systems to automate workflows and unlock new capabilities.",
-    icon: <Cpu className="h-6 w-6" />,
+    title: "AI / ML Solutions",
+    icon: <Brain className="h-6 w-6" />,
+    description:
+      "Design and deploy intelligent systems — from LLM integrations to custom ML pipelines that automate decisions and unlock new capabilities.",
     features: ["LLM Integration", "Workflow Automation", "Data Pipelines"],
-    price: "Starting at $2,500",
-    mostPopular: true
+    price: "Starting from $2,500",
+    accent: "text-blue-400",
+    bg: "bg-blue-400/10",
+    highlight: true,
   },
   {
-    title: "Full-Stack AI Development",
-    description: "Build modern, production-ready web apps that feel fast, polished, and intelligent.",
-    icon: <LayoutTemplate className="h-6 w-6" />,
-    features: ["Next.js & React Frontend", "Python Backend", "AI Integration"],
-    price: "Starting at $1,800"
+    title: "Full Stack Web Development",
+    icon: <Globe className="h-6 w-6" />,
+    description:
+      "Build modern, production-ready web applications with clean architecture, fast performance, and seamless user experiences.",
+    features: ["React / Next.js", "Python / Node.js Backend", "MongoDB & APIs"],
+    price: "Starting from $1,800",
+    accent: "text-emerald-400",
+    bg: "bg-emerald-400/10",
+    highlight: false,
   },
   {
-    title: "Technical Consulting",
-    description: "Validate ideas quickly with solid technical foundations and clear execution plans.",
-    icon: <Workflow className="h-6 w-6" />,
-    features: ["Architecture Design", "Prototyping", "UX Reviews"],
-    price: "Starting at $80/hour"
-  }
+    title: "Technical Consultation",
+    icon: <Zap className="h-6 w-6" />,
+    description:
+      "Design robust REST APIs and automation systems that connect your tools, eliminate repetitive work, and scale effortlessly.",
+    features: ["FastAPI / Express", "Third-party Integrations", "Task Scheduling"],
+    price: "Starting from $80/hr",
+    accent: "text-purple-400",
+    bg: "bg-purple-400/10",
+    highlight: false,
+  },
 ];
 
 export function ServicesSection() {
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const target = document.querySelector("#contact");
+    if (target) {
+      (target as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <section id="services" className="py-24 bg-background/50 border-y border-white/5">
-      <div className="container px-6 mx-auto">
+    <section id="services" className="section-padding bg-[#020617] relative border-t border-white/5">
+      <div className="container-custom">
+        {/* Header */}
         <div className="flex flex-col items-center text-center space-y-4 mb-16">
-          <span className="text-sm font-bold uppercase tracking-[0.25em] text-primary">Services</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground italic">
-            Specialized <span className="text-gradient-blue NOT-italic">Solutions</span>
+          <h2 className="section-heading uppercase tracking-tighter">
+            My <span className="text-gradient-blue">Services</span>
           </h2>
-          <p className="max-w-2xl text-muted-foreground">
+          <p className="section-subtitle">
             Helping startups and teams build high-performance products with the latest AI and web technologies.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className={`glass p-8 rounded-[2.5rem] hover:border-primary/30 transition-all group relative ${
-                service.mostPopular ? "border-primary/60 bg-primary/5 shadow-primary/30" : ""
-              }`}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`glass p-8 rounded-[2.5rem] flex flex-col gap-6 group
+                transition-all duration-300
+                hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/40
+                ${service.highlight ? "border-primary/30 bg-primary/5" : "border-white/5 hover:border-white/10"}`}
             >
-              {service.mostPopular && (
-                <span className="absolute -top-4 right-6 px-3 py-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-[0.18em]">
-                  Most Popular
-                </span>
-              )}
-              <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+              {/* Icon */}
+              <div className={`h-14 w-14 rounded-2xl ${service.bg} flex items-center justify-center ${service.accent} group-hover:scale-110 transition-transform duration-300`}>
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-1">{service.title}</h3>
-              <p className="text-sm font-semibold text-primary mb-3">{service.price}</p>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+
+              {/* Title & Price */}
+              <div className="space-y-1">
+                <h3 className="text-lg font-black uppercase tracking-widest text-foreground leading-tight">
+                  {service.title}
+                </h3>
+                <p className={`text-xs font-bold uppercase tracking-[0.15em] ${service.accent}`}>
+                  {service.price}
+                </p>
+              </div>
+
+              {/* Description */}
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                 {service.description}
               </p>
+
+              {/* Feature Tags */}
               <div className="flex flex-wrap gap-2">
-                {service.features.map(feature => (
-                  <span key={feature} className="text-[10px] font-bold uppercase tracking-wider text-primary/80 bg-primary/5 px-2 py-1 rounded-md">
-                    {feature}
+                {service.features.map((f) => (
+                  <span
+                    key={f}
+                    className={`text-[10px] font-bold uppercase tracking-wider ${service.accent} bg-white/5 px-2.5 py-1 rounded-lg`}
+                  >
+                    {f}
                   </span>
                 ))}
               </div>
+
+              {/* CTA */}
+              <a
+                href="#contact"
+                onClick={scrollToContact}
+                className={`group/btn flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl
+                  border border-white/10 bg-white/[0.04]
+                  text-xs font-black uppercase tracking-[0.18em] text-foreground
+                  hover:bg-primary hover:text-primary-foreground hover:border-primary
+                  transition-all duration-300 active:scale-95`}
+              >
+                Get Started
+                <ArrowRight
+                  size={14}
+                  className="group-hover/btn:translate-x-1 transition-transform duration-300"
+                />
+              </a>
             </motion.div>
           ))}
         </div>

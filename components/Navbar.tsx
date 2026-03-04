@@ -44,7 +44,7 @@ export function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}>
       <div className="container-custom">
-        <div className="glass px-6 py-3 rounded-full flex items-center justify-between border-white/10 shadow-2xl">
+        <div className={`glass px-6 py-3 rounded-full flex items-center justify-between border-white/10 transition-all duration-300 ${scrolled ? "shadow-xl shadow-black/50 backdrop-blur-xl bg-white/[0.06]" : "shadow-2xl"}`}>
           {/* Logo - Left */}
           <a
             href="#"
@@ -63,7 +63,7 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors"
+                className="nav-link"
               >
                 {item.label}
               </a>

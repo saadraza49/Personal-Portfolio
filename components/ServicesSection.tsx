@@ -70,11 +70,17 @@ export function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`glass p-8 rounded-[2.5rem] flex flex-col gap-6 group
+              className={`relative glass p-8 rounded-[2.5rem] flex flex-col gap-6 group
                 transition-all duration-300
                 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/40
-                ${service.highlight ? "border-primary/30 bg-primary/5" : "border-white/5 hover:border-white/10"}`}
+                ${service.highlight ? "border-primary/40 bg-primary/5 shadow-primary/10 shadow-xl" : "border-white/5 hover:border-white/10"}`}
             >
+              {/* Most Popular Badge — absolute top-right inside the card */}
+              {service.highlight && (
+                <span className="absolute -top-3 right-6 px-3 py-1 rounded-full bg-primary text-primary-foreground text-[9px] font-black uppercase tracking-[0.2em] shadow-lg shadow-primary/30 z-10">
+                  ★ Most Popular
+                </span>
+              )}
               {/* Icon */}
               <div className={`h-14 w-14 rounded-2xl ${service.bg} flex items-center justify-center ${service.accent} group-hover:scale-110 transition-transform duration-300`}>
                 {service.icon}

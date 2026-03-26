@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -79,12 +79,21 @@ export function Navbar() {
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
             <a
+              href="/SaadRazaResume.pdf"
+              download
+              className="hidden md:inline-flex items-center gap-2 px-6 py-2 rounded-full glass text-foreground text-xs font-bold hover:bg-white/10 transition-all border-white/20 active:scale-95"
+            >
+              <Download size={14} />
+              Download CV
+            </a>
+            <a
               href="#contact"
               className="hidden md:inline-flex px-6 py-2 rounded-full bg-primary text-primary-foreground text-xs font-bold hover:brightness-110 transition-all active:scale-95"
             >
-              Let's Talk
+              Let&apos;s Talk
             </a>
           </div>
+
         </div>
       </div>
 
@@ -116,8 +125,18 @@ export function Navbar() {
                 className="w-full py-4 rounded-2xl bg-primary text-primary-foreground text-center font-bold"
                 onClick={() => setIsOpen(false)}
               >
-                Let's Talk
+                Let&apos;s Talk
               </a>
+              <a
+                href="/SaadRazaResume.pdf"
+                download
+                className="w-full py-4 rounded-2xl glass text-foreground text-center font-bold flex items-center justify-center gap-2 border-white/20 hover:bg-white/10 transition-all"
+                onClick={() => setIsOpen(false)}
+              >
+                <Download size={16} />
+                Download CV
+              </a>
+
             </div>
           </motion.div>
         )}

@@ -5,6 +5,7 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { WhyChooseMe } from "@/components/WhyChooseMe";
 import { SkillsSection } from "@/components/SkillsSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
+import { CompetitionsSection } from "@/components/CompetitionsSection";
 import { AchievementsSection } from "@/components/AchievementsSection";
 import { ProcessSection } from "@/components/ProcessSection";
 import { VerifyMyWork } from "@/components/VerifyMyWork";
@@ -22,6 +23,7 @@ export default function HomePage() {
       <ServicesSection />
       <WhyChooseMe />
       <ProjectsSection />
+      <CompetitionsSection />
       <AchievementsSection />
       <ProcessSection />
       <ContactSection />
@@ -29,4 +31,3 @@ export default function HomePage() {
     </main>
   );
 }
-

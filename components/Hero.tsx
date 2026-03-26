@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Download } from "lucide-react";
 
 const techStack = [
   { name: "Python", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
@@ -53,7 +53,6 @@ export function Hero() {
             </motion.p>
           </div>
 
-          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,7 +71,16 @@ export function Hero() {
             >
               My Story
             </a>
+            <a
+              href="/SaadRazaResume.pdf"
+              download
+              className="inline-flex items-center gap-2 px-10 py-5 rounded-full glass text-foreground font-black text-sm uppercase tracking-widest hover:bg-white/10 transition-all border-white/20"
+            >
+              <Download size={16} />
+              Download CV
+            </a>
           </motion.div>
+
 
           {/* Tech stack bar */}
           <motion.div

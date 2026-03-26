@@ -1,7 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { Github, ExternalLink, Sparkles } from "lucide-react";
+
+const projects = [
+  {
+    title: "Customer Churn Prediction",
+    description:
+      "A machine learning project that predicts customer churn using Python. Includes data preprocessing, EDA, model training, and evaluation with accuracy metrics.",
+    tags: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn", "Jupyter"],
+    github: "https://github.com/saadraza49/Customer-Churn-Prediction",
+    live: null,
+  },
+  {
+    title: "Personal Portfolio Website",
+    description:
+      "This portfolio — designed and built from scratch. Fully responsive and deployed on Vercel with smooth animations and a modern dark aesthetic.",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/saadraza49/Personal-Portfolio",
+    live: "https://saadraza.vercel.app",
+  },
+];
 
 export function ProjectsSection() {
   return (
@@ -19,35 +38,66 @@ export function ProjectsSection() {
             A selection of my recent projects involving AI, full-stack development, and complex problem-solving.
           </p>
         </div>
-        <div className="flex flex-col items-center gap-2 px-4 py-2 rounded-full glass border-primary/10 mt-6">
-          <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-          <span className="text-xs font-bold text-foreground">4+ Projects shipped</span>
-        </div>
-      </div>
 
-      <div className="container-custom mt-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="glass p-12 rounded-[3rem] text-center space-y-6 bg-gradient-to-b from-primary/5 to-transparent border-primary/10"
-        >
-          <div className="inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-primary/10 text-primary mb-4">
-            <Sparkles className="h-10 w-10" />
-          </div>
-          <h3 className="text-2xl font-black text-foreground uppercase tracking-tight">Case Studies <span className="text-gradient-blue uppercase">Coming Soon</span></h3>
-          <p className="max-w-xl mx-auto text-muted-foreground leading-relaxed font-medium">
-            I&apos;m currently curating and documenting my most impactful work.
-            I&apos;ve built AI tools, dashboards, and full-stack apps that are being polished for showcase here.
-          </p>
-          <div className="pt-4">
-            <a href="https://github.com/saadraza49" target="_blank" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
-              <span className="text-xs font-black uppercase tracking-widest">View my GitHub for live code</span>
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -6 }}
+              className="glass p-8 rounded-[2.5rem] flex flex-col gap-6 hover:bg-white/[0.07] hover:border-primary/30 transition-all group shadow-xl"
+            >
+              {/* Title */}
+              <h3 className="text-xl font-black text-foreground uppercase tracking-tight leading-tight">
+                {project.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-sm text-muted-foreground leading-relaxed font-medium flex-1">
+                {project.description}
+              </p>
+
+              {/* Tech Tags */}
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-wider border border-primary/20"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Links */}
+              <div className="flex items-center gap-3 pt-2">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-xs font-black uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all"
+                >
+                  <Github size={14} />
+                  GitHub
+                </a>
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass text-foreground text-xs font-black uppercase tracking-widest hover:bg-white/10 transition-all border-white/20"
+                  >
+                    <ExternalLink size={14} />
+                    Live
+                  </a>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

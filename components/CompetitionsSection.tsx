@@ -24,9 +24,9 @@ const competitions = [
   },
   {
     icon: <Users className="h-6 w-6" />,
-    title: "CIP - Code In Place 2026",
+    title: "CIP 2026 - Code In Place by Stanford University",
     role: "Teacher & Student",
-    description: "Both a learner and an instructor in the Competitive & Informatics Program, mentoring peers in algorithms and data structures.",
+    description: "Both a learner and an instructor in the Code In Place 2026 by Stanford University, mentoring peers in algorithms and data structures.",
   },
 ];
 

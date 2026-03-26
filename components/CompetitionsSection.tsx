@@ -68,7 +68,6 @@ export function CompetitionsSection() {
               <p className="text-sm text-muted-foreground leading-relaxed font-medium">
                 {item.description}
               </p>
-              <div className="text-3xl pt-2">{item.accent}</div>
             </motion.div>
           ))}
         </div>

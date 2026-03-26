@@ -6,31 +6,27 @@ import { Code2, Sparkles, Trophy, Users, BookOpen } from "lucide-react";
 const competitions = [
   {
     icon: <Trophy className="h-6 w-6" />,
-    title: "MIT Competitive Programming Contest",
+    title: "MIT Competitive Programming Contest 2026",
     role: "Participant",
-    description: "Competed in MIT's competitive programming contest, tackling algorithmic challenges under timed conditions.",
-    accent: "🏆",
+    description: "Participated in MIT's competitive programming contest, tackling algorithmic challenges under timed conditions.",
   },
   {
     icon: <Code2 className="h-6 w-6" />,
-    title: "CS50x Puzzle Day",
+    title: "CS50x Puzzle Day Harvard 2026",
     role: "Upcoming Participant",
     description: "Registered to participate in Harvard's CS50x Puzzle Day, a collaborative puzzle-solving event.",
-    accent: "🧩",
   },
   {
     icon: <Sparkles className="h-6 w-6" />,
-    title: "Calico",
+    title: "Calico UC Berkeley Contest 2026",
     role: "Upcoming Participant",
     description: "Preparing to participate in Calico, UC Berkeley's biannual programming contest emphasizing algorithms.",
-    accent: "🐱",
   },
   {
     icon: <Users className="h-6 w-6" />,
-    title: "CIP — Competitive & Informatics Program",
+    title: "CIP - Code In Place 2026",
     role: "Teacher & Student",
     description: "Both a learner and an instructor in the Competitive & Informatics Program, mentoring peers in algorithms and data structures.",
-    accent: "📚",
   },
 ];
 

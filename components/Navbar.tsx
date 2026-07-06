@@ -79,7 +79,7 @@ export function Navbar() {
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
             <a
-              href="/SaadRazaResume.pdf"
+              href="/resume.pdf"
               download
               className="hidden md:inline-flex items-center gap-2 px-6 py-2 rounded-full glass text-foreground text-xs font-bold hover:bg-white/10 transition-all border-white/20 active:scale-95"
             >
@@ -128,7 +128,7 @@ export function Navbar() {
                 Let&apos;s Talk
               </a>
               <a
-                href="/SaadRazaResume.pdf"
+                href="/resume.pdf"
                 download
                 className="w-full py-4 rounded-2xl glass text-foreground text-center font-bold flex items-center justify-center gap-2 border-white/20 hover:bg-white/10 transition-all"
                 onClick={() => setIsOpen(false)}

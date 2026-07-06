@@ -72,7 +72,7 @@ export function Hero() {
               My Story
             </a>
             <a
-              href="/SaadRazaResume.pdf"
+              href="/resume.pdf"
               download
               className="inline-flex items-center gap-2 px-10 py-5 rounded-full glass text-foreground font-black text-sm uppercase tracking-widest hover:bg-white/10 transition-all border-white/20"
             >

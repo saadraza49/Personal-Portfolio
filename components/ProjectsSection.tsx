@@ -6,6 +6,7 @@ import { Github, ExternalLink, Sparkles } from "lucide-react";
 const projects = [
   {
     title: "Customer Churn Prediction",
+    status: "Completed",
     description:
       "A machine learning project that predicts customer churn using Python. Includes data preprocessing, EDA, model training, and evaluation with accuracy metrics.",
     tags: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn", "Jupyter"],
@@ -14,11 +15,30 @@ const projects = [
   },
   {
     title: "Personal Portfolio Website",
+    status: "Completed",
     description:
       "This portfolio — designed and built from scratch. Fully responsive and deployed on Vercel with smooth animations and a modern dark aesthetic.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/saadraza49/Personal-Portfolio",
     live: "https://saadraza.vercel.app",
+  },
+  {
+    title: "KARDEO",
+    status: "In Progress",
+    description:
+      "AI-powered fitness and gym management SaaS platform built for independently owned gyms, featuring AI-driven coaching and business automation.",
+    tags: ["FastAPI", "MongoDB", "Next.js"],
+    github: null,
+    live: null,
+  },
+  {
+    title: "ApnaGPA",
+    status: "In Progress",
+    description:
+      "A GPA and CGPA calculator built for GCUF students, offering instant, accurate semester and cumulative GPA calculations following the official GCUF grading policy.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    github: null,
+    live: null,
   },
 ];
 
@@ -50,10 +70,17 @@ export function ProjectsSection() {
               whileHover={{ y: -6 }}
               className="glass p-8 rounded-[2.5rem] flex flex-col gap-6 hover:bg-white/[0.07] hover:border-primary/30 transition-all group shadow-xl"
             >
-              {/* Title */}
-              <h3 className="text-xl font-black text-foreground uppercase tracking-tight leading-tight">
-                {project.title}
-              </h3>
+              {/* Title & Status */}
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-xl font-black text-foreground uppercase tracking-tight leading-tight">
+                  {project.title}
+                </h3>
+                {project.status === "In Progress" && (
+                  <span className="px-2 py-1 rounded-md bg-amber-500/10 text-amber-500 text-[10px] font-black uppercase tracking-widest border border-amber-500/20 whitespace-nowrap mt-0.5">
+                    In Progress
+                  </span>
+                )}
+              </div>
 
               {/* Description */}
               <p className="text-sm text-muted-foreground leading-relaxed font-medium flex-1">
@@ -74,25 +101,35 @@ export function ProjectsSection() {
 
               {/* Links */}
               <div className="flex items-center gap-3 pt-2">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-xs font-black uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all"
-                >
-                  <Github size={14} />
-                  GitHub
-                </a>
-                {project.live && (
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass text-foreground text-xs font-black uppercase tracking-widest hover:bg-white/10 transition-all border-white/20"
-                  >
-                    <ExternalLink size={14} />
-                    Live
-                  </a>
+                {project.status === "In Progress" ? (
+                  <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass text-muted-foreground/50 text-xs font-black uppercase tracking-widest border border-white/5 cursor-not-allowed">
+                    Coming Soon
+                  </div>
+                ) : (
+                  <>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-xs font-black uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all"
+                      >
+                        <Github size={14} />
+                        GitHub
+                      </a>
+                    )}
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass text-foreground text-xs font-black uppercase tracking-widest hover:bg-white/10 transition-all border-white/20"
+                      >
+                        <ExternalLink size={14} />
+                        Live
+                      </a>
+                    )}
+                  </>
                 )}
               </div>
             </motion.div>

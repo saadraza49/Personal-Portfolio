@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 const aboutStats = [
   { label: "LeetCode Solved", value: "10+", color: "green" },
-  { label: "Experience", value: "3+ Years", color: "blue" },
+  { label: "Hands-on Builder", value: "Since '24", color: "blue" },
   { label: "Projects Done", value: "4+", color: "purple" },
-  { label: "Certifications", value: "3+", color: "emerald" }
+  { label: "Certifications", value: "6", color: "emerald" }
 ];
 
 export function AboutSection() {
@@ -30,11 +30,23 @@ export function AboutSection() {
               </h2>
             </div>
 
-            <p className="text-xl text-muted-foreground leading-relaxed font-bold">
-              I&apos;m <span className="text-foreground font-black">Muhammad Saad Raza</span>, a Software Engineering student at GCU Faisalabad.
-              Currently, I am <span className="text-primary font-black">Learning AI & Machine Learning from SMIT (Saylani Mass IT Training)</span> to further deepen my expertise.
-              I specialize in merging advanced AI capabilities with modern web architectures to build scalable, intelligent software systems.
-            </p>
+            <div className="space-y-8">
+              <p className="text-xl text-muted-foreground leading-relaxed font-bold">
+                AI-Driven Software Engineer with a focus on building real, production-minded applications in AI/ML and backend development. Currently serving as a Section Leader at Stanford University's Code in Place 2026, selected globally to mentor and teach Python to students around the world. Software Engineering student at Government College University, Faisalabad (SE'29), also training in AI & Data Science at Saylani Mass IT Training Program. I don't just study concepts — I build with them: FastAPI backends connected to real cloud databases, AI-powered applications, and a Google hackathon project. Open to internships, freelance projects, collaborations, and mentorship.
+              </p>
+
+              <div className="glass p-6 md:p-8 rounded-[2rem] border-white/5 shadow-xl text-left space-y-4 hover:bg-white/[0.04] transition-colors relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-1.5 h-full bg-primary/80 group-hover:bg-primary transition-colors" />
+                <h3 className="text-xl font-black text-foreground">Section Leader — Stanford University: Code in Place 2026</h3>
+                <p className="text-xs font-bold uppercase tracking-widest text-primary/90">April 2026 – May 2026 (2 months) | Stanford, CA (Remote)</p>
+                <ul className="list-disc list-inside text-muted-foreground space-y-2 text-sm md:text-base leading-relaxed">
+                  <li>Mentored a section of 10-15 beginner programmers in Stanford's Code in Place, a free global intro-to-CS course modeled on CS106A</li>
+                  <li>Led 6 weekly live sections covering Python fundamentals — variables, loops, conditionals, functions, lists, dictionaries</li>
+                  <li>Debugged 1:1 with students on real coding assignments, focusing on improving problem-solving approach rather than just fixing errors</li>
+                  <li>Built a collaborative section culture with high engagement and attendance</li>
+                </ul>
+              </div>
+            </div>
           </motion.div>
 
           <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-6">

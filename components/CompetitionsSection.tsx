@@ -1,33 +1,64 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Sparkles, Trophy, Users, BookOpen } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const competitions = [
   {
-    icon: <Trophy className="h-6 w-6" />,
-    title: "MIT Competitive Programming Contest 2026",
-    role: "Participant",
-    description: "Participated in MIT's competitive programming contest, tackling algorithmic challenges under timed conditions.",
+    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Harvard_University_coat_of_arms.svg" alt="Harvard" className="h-8 w-8 object-contain drop-shadow-md" />,
+    title: "CS50x Puzzle Day 2026",
+    status: "Harvard University",
+    description: "Participated in and solved complex logic puzzles in Harvard's global event.",
   },
   {
-    icon: <Code2 className="h-6 w-6" />,
-    title: "CS50x Puzzle Day Harvard 2026",
-    role: "Upcoming Participant",
-    description: "Registered to participate in Harvard's CS50x Puzzle Day, a collaborative puzzle-solving event.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="h-8 w-8 object-contain">
+        <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.333.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+      </svg>
+    ),
+    title: "Google AI Professional Certificate",
+    status: "Certified",
+    description: "Comprehensive training in artificial intelligence concepts and applications.",
   },
   {
-    icon: <Sparkles className="h-6 w-6" />,
-    title: "Calico UC Berkeley Contest 2026",
-    role: "Upcoming Participant",
-    description: "Preparing to participate in Calico, UC Berkeley's biannual programming contest emphasizing algorithms.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="h-8 w-8 object-contain">
+        <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.333.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+      </svg>
+    ),
+    title: "Google Prompting Essentials",
+    status: "Certified",
+    description: "Mastered effective AI prompting techniques for optimal results.",
   },
   {
-    icon: <Users className="h-6 w-6" />,
-    title: "CIP 2026 - Code In Place by Stanford University",
-    role: "Teacher & Student",
-    description: "Both a learner and an instructor in the Code In Place 2026 by Stanford University, mentoring peers in algorithms and data structures.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="h-8 w-8 object-contain">
+        <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.333.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+      </svg>
+    ),
+    title: "Build With AI – AI Hackathon",
+    status: "Google Developer Group",
+    description: "Competed and built AI-powered solutions at GDG FAST NUCES FSD.",
   },
+  {
+    icon: <img src="https://cdn.simpleicons.org/cisco/white" alt="Cisco" className="h-8 w-8 object-contain" />,
+    title: "Python Essentials 1",
+    status: "Cisco",
+    description: "Solidified foundational Python programming skills through Cisco Netacad.",
+  },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" className="h-8 w-8 object-contain drop-shadow-md">
+        <path fill="#f35325" d="M0 0h42v42H0z"/>
+        <path fill="#81bc06" d="M46 0h42v42H46z"/>
+        <path fill="#05a6f0" d="M0 46h42v42H0z"/>
+        <path fill="#ffba08" d="M46 46h42v42H46z"/>
+      </svg>
+    ),
+    title: "Microsoft Python Programming Fundamentals",
+    status: "Certified",
+    description: "Demonstrated core understanding of Python programming concepts.",
+  }
 ];
 
 export function CompetitionsSection() {
@@ -63,7 +94,7 @@ export function CompetitionsSection() {
               </div>
               <div className="space-y-2">
                 <h3 className="text-base font-black text-foreground leading-tight uppercase tracking-tight">{item.title}</h3>
-                <span className="text-[10px] font-black uppercase tracking-widest text-primary/80">{item.role}</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-primary/80">{item.status}</span>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed font-medium">
                 {item.description}

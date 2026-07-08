@@ -23,20 +23,20 @@ const projects = [
     live: "https://saadraza.vercel.app",
   },
   {
+    title: "ApnaGPA",
+    status: "Completed",
+    description:
+      "A GPA and CGPA calculator built for GCUF students, offering instant, accurate semester and cumulative GPA calculations following the official GCUF grading policy.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/saadraza49/ApnaGPA",
+    live: "https://apnagpa.vercel.app/",
+  },
+  {
     title: "KARDEO",
     status: "In Progress",
     description:
       "AI-powered fitness and gym management SaaS platform built for independently owned gyms, featuring AI-driven coaching and business automation.",
     tags: ["FastAPI", "MongoDB", "Next.js"],
-    github: null,
-    live: null,
-  },
-  {
-    title: "ApnaGPA",
-    status: "In Progress",
-    description:
-      "A GPA and CGPA calculator built for GCUF students, offering instant, accurate semester and cumulative GPA calculations following the official GCUF grading policy.",
-    tags: ["HTML", "CSS", "JavaScript"],
     github: null,
     live: null,
   },

@@ -33,12 +33,12 @@ const projects = [
   },
   {
     title: "KARDEO",
-    status: "In Progress",
+    status: "Completed",
     description:
       "AI-powered fitness and gym management SaaS platform built for independently owned gyms, featuring AI-driven coaching and business automation.",
     tags: ["FastAPI", "MongoDB", "Next.js"],
     github: null,
-    live: null,
+    live: "https://kardeo.vercel.app",
   },
 ];
 
